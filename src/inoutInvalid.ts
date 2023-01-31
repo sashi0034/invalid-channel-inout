@@ -11,7 +11,8 @@ export class InoutInvalid{
         if (e.subtype!=="channel_leave" && 
             e.subtype!=="channel_join") return;
 
-        getLogger().info("delete message: " + e);
+        getLogger().log("delete message");
+        getLogger().info(e);
 
         await this.slackAction.deleteMessage(e.channel, e.ts);
     }

@@ -36,7 +36,7 @@ class SlackActionWrapper{
     public async deleteMessage(channel: string, timeStamp: string){
         const result = await this.app.client.chat.delete({
             token: this.config.userToken,
-            channel: this.config.targetChannel,
+            channel: channel,
             ts: timeStamp,
             as_user: true
         })
